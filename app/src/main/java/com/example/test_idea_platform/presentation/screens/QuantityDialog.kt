@@ -26,6 +26,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.test_idea_platform.R
@@ -46,7 +47,8 @@ fun QuantityDialog(
         title = {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.Center,
+                modifier = Modifier.padding(start = 30.dp)
                 ) {
                 Icon(
                     imageVector = Icons.Default.Settings,
@@ -77,8 +79,9 @@ fun QuantityDialog(
                             contentAlignment = Alignment.Center
                         ) {
                             Icon(
-                                imageVector = Icons.Default.Clear,
+                                painter = painterResource(id = R.drawable.baseline_remove_circle_outline_24),
                                 contentDescription = stringResource(id = R.string.minus),
+                                tint = Color(0xFF495377),
                                 modifier = Modifier.size(24.dp)
                             )
                         }
@@ -99,8 +102,9 @@ fun QuantityDialog(
                             contentAlignment = Alignment.Center
                         ) {
                             Icon(
-                                imageVector = Icons.Default.Add,
+                                painter = painterResource(id = R.drawable.baseline_add_circle_outline_24),
                                 contentDescription = stringResource(id = R.string.plus),
+                                tint = Color(0xFF495377),
                                 modifier = Modifier.size(24.dp)
                             )
                         }
