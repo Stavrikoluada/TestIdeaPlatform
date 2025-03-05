@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import androidx.room.Room
 import com.example.test_idea_platform.presentation.di.Application
 
-@Database(entities = [DeviceEntity::class], version = 5)
+@Database(entities = [DeviceEntity::class], version = 11)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun deviceDao(): DeviceDao
 
@@ -17,7 +17,9 @@ abstract class AppDatabase : RoomDatabase() {
                 Application.appContext,
                 AppDatabase::class.java,
                 DATABASE_NAME
-            ).allowMainThreadQueries()
+            )
+                .createFromAsset("data.db")
+                .allowMainThreadQueries()
                 .fallbackToDestructiveMigration()
                 .build()
         }

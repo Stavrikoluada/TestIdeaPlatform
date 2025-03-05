@@ -84,36 +84,40 @@ fun ItemScreen(
                 ) {
                     IconButton(onClick = { showDialogQuantity = true }) {
                         Icon(imageVector = Icons.Default.Edit,
-                            contentDescription = stringResource(id = R.string.edit))
+                            contentDescription = stringResource(id = R.string.edit),
+                            tint = Color(0xFF9B4DFF))
                     }
                     IconButton(onClick = { showDialogDelete = true }) {
                         Icon(imageVector = Icons.Default.Delete,
-                            contentDescription = stringResource(id = R.string.delete))
+                            contentDescription = stringResource(id = R.string.delete),
+                            tint = Color(0xFFFF7043))
                     }
                 }
             }
 
             Spacer(modifier = Modifier.height(8.dp))
 
-            FlowRow(
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                device.tags.forEach { tag ->
-                    OutlinedButton(
-                        onClick = { },
-                        modifier = Modifier.padding(4.dp),
-                        border = BorderStroke(1.dp, Color.Black),
-                        shape = RoundedCornerShape(8.dp),
-                    ) {
-                        Text(
-                            text = tag,
-                            color = Color.Black
-                        )
+            if (device.tags[0] != "") {
+                FlowRow(
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    device.tags.forEach { tag ->
+                        OutlinedButton(
+                            onClick = { },
+                            modifier = Modifier.padding(4.dp),
+                            border = BorderStroke(1.dp, Color.Black),
+                            shape = RoundedCornerShape(8.dp),
+                        ) {
+                            Text(
+                                text = tag,
+                                color = Color.Black
+                            )
+                        }
                     }
                 }
-            }
 
-            Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(8.dp))
+            }
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -177,8 +181,8 @@ fun formatDate(time: Long): String {
     val instant = Instant.ofEpochMilli(time)
     val date = instant.atZone(ZoneId.systemDefault()).toLocalDate()
     return date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))
-
 }
+
 
 
 

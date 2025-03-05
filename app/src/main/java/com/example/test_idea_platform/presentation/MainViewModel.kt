@@ -13,9 +13,6 @@ class MainViewModel(
     val deviceState: StateFlow<DeviceUiState> = _deviceState
 
     init {
-        interactor.getTestData().forEach { device ->
-            interactor.insertDevices(device)
-        }
         loadDevices()
     }
 
