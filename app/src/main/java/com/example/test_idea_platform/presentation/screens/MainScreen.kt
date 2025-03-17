@@ -57,7 +57,7 @@ fun MainScreen(
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF42A5F5),
+                    containerColor = Color(0xFF9AC7FA),
                     titleContentColor = Color.Black
                 )
             )
@@ -67,7 +67,7 @@ fun MainScreen(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(it),
-            color = Color(0xFFD5D5D5)
+            color = Color(0xFFEFEFEF)
         ) {
             Column(
                 modifier = Modifier.fillMaxSize()

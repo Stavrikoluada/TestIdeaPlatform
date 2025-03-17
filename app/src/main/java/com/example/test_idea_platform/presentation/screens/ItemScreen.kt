@@ -59,7 +59,8 @@ fun ItemScreen(
         shape = RoundedCornerShape(8.dp),
         colors = CardDefaults.cardColors(
             containerColor = Color.White
-        )
+        ),
+        elevation = CardDefaults.cardElevation(16.dp)
 
     ) {
         Column(
@@ -94,8 +95,6 @@ fun ItemScreen(
                     }
                 }
             }
-
-            Spacer(modifier = Modifier.height(8.dp))
 
             if (device.tags[0] != "") {
                 FlowRow(
