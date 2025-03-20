@@ -9,7 +9,7 @@ import androidx.annotation.RequiresApi
 import com.example.test_idea_platform.data.db.DatabaseHelper
 import com.example.test_idea_platform.presentation.di.Application
 import com.example.test_idea_platform.presentation.screens.MainScreen
-import com.example.test_idea_platform.ui.theme.TestIDeaPlatformTheme
+import com.example.test_idea_platform.ui.theme.TestIdeaPlatformTheme
 import javax.inject.Inject
 
 class MainActivity : ComponentActivity() {
@@ -28,7 +28,7 @@ class MainActivity : ComponentActivity() {
 
         enableEdgeToEdge()
         setContent {
-            TestIDeaPlatformTheme {
+            TestIdeaPlatformTheme {
                 MainScreen(viewModel = viewModel)
             }
         }

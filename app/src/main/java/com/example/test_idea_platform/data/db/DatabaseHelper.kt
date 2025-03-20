@@ -33,7 +33,10 @@ class DatabaseHelper(private val context: Context) {
     private fun copyStream(inputStream: InputStream, outputStream: OutputStream) {
         val buffer = ByteArray(1024)
         var length: Int
-        while (inputStream.read(buffer).also { length = it } > 0) {
+        
+        while (true) {
+            length = inputStream.read(buffer)
+            if (length == -1) break
             outputStream.write(buffer, 0, length)
         }
     }
